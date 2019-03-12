@@ -1,0 +1,57 @@
+.TextArea {
+  width: 100%;
+  height: 80vh;
+  background-color: transparent;
+  position: relative;
+}
+
+.TextArea .Editable {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-align: left;
+  z-index: 2;
+  color: black;
+  font-size: 1em;
+  font-family: monospace;
+  overflow: scroll;
+}
+
+.TextArea .Background {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: white;
+  overflow: hidden;
+}
+
+.TextArea .Highlights {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-align: left;
+  z-index: 1;
+  color: black;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 1em;
+  font-family: monospace;
+  color: transparent;
+}
+
+.TextArea .Highlights .SentenceSpan {
+  border-radius: 3px;
+}

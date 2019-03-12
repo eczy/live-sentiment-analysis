@@ -1,0 +1,24 @@
+image: node:latest
+
+stages:
+  - lint
+  - build
+  - test
+  - deploy
+
+pylint:
+  stage: lint
+  image: "python:latest"
+  script:
+    - pip install -r api/requirements.txt
+    - pip install pylint
+    - pylint api/
+
+eslint:
+  stage: lint
+  image: "node:latest"
+  script:
+    - cd ui/
+    - npm i
+    - npm i -g eslint eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react
+    - eslint src/App.js src/component/**/*.js
