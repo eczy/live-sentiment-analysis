@@ -1,2 +1,1 @@
-# Sentiment Notepad
-
+# Live Sentiment Analysis
