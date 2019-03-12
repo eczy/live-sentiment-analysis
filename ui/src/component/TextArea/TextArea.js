@@ -56,6 +56,7 @@ class TextArea extends Component {
 
   render() {
     const { ...state } = this.state;
+    const { ...props } = this.props;
     return (
       <div className="TextArea">
         <div className="Background" ref={(c) => { this.scrollSyncTarget = c; }}>
@@ -64,31 +65,24 @@ class TextArea extends Component {
                 state.sentimentText.map(paragraph => (
                   <div className="ParDiv">
                     {
-                        paragraph.map((sentence) => {
-                          let color1; let
-                            color2;
-                          if (sentence.polarity.compound < 0) {
-                            color1 = [255, 0, 0, 1];
-                            color2 = [0, 0, 0, 0];
-                          } else {
-                            color1 = [0, 255, 0, 1];
-                            color2 = [0, 0, 0, 0];
-                          }
-                          return (
-                            <span
-                              className="SentenceSpan"
-                              style={
+                        paragraph.map(sentence => (
+                          <span
+                            className="SentenceSpan"
+                            style={
                               {
                                 backgroundColor: TextArea.evaluateGradient(
-                                  color1, color2, Math.abs(sentence.polarity.compound),
+                                  (sentence.polarity.compound < 0)
+                                    ? props.negColor
+                                    : props.posColor,
+                                  [0, 0, 0, 0],
+                                  Math.abs(sentence.polarity.compound),
                                 ),
                               }
                             }
-                            >
-                              {sentence.sentence}
-                            </span>
-                          );
-                        })
+                          >
+                            {sentence.sentence}
+                          </span>
+                        ))
                       }
                     <br />
                   </div>
