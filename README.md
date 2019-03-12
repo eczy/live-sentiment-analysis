@@ -1,5 +1,7 @@
 # Live Sentiment Analysis
 
+![](img/demo.gif)
+
 This is a full-stack toy application that performs sentiment analysis on
 textual user input as it is being written.
 
