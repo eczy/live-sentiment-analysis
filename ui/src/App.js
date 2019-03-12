@@ -7,7 +7,10 @@ const App = () => (
   <div className="App">
     <header className="App-header">
       <Header />
-      <TextArea />
+      <TextArea
+        posColor={[0, 255, 0, 1]}
+        negColor={[255, 0, 0, 1]}
+      />
     </header>
   </div>
 );
