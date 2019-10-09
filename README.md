@@ -1,16 +1,16 @@
 # Live Sentiment Analysis
 
-<img src="img/demo.gif" alt="demo" width="800"/>
-
-This is a full-stack toy application that performs sentiment analysis on
+This is a toy web app that performs sentiment analysis on
 textual user input as it is being written. Currently, this is only
 designed to run in a dev environment, but with a few minor modifications
 it can be deployed with any cloud service provider.
 
-For sake of simplicity, speed, and merit of not having to find a huge
-dataset, this application uses the pre-trained rule based VADER model
+For sake of simplicity, speed, and lack of having a huge dataset for training,
+this application uses a pre-trained rule based VADER model
 ([paper](https://www.researchgate.net/publication/275828927_VADER_A_Parsimonious_Rule-based_Model_for_Sentiment_Analysis_of_Social_Media_Text))
-built into NLTK.
+built into NLTK. There is an npm package for VADER, but the application was
+built with a backend so that more complex/computationally expensive models
+can be used.
 
 ## How to run
 1. Clone this repo
